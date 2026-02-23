@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Crows - Crafting Unforgettable Gaming Experiences</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+        :root {
+            --red: #c0392b;
+            --red-dark: #a93226;
+            --red-light: #e74c3c;
+            --black: #1a1a1a;
+            --dark: #111111;
+            --gray-dark: #2a2a2a;
+            --gray: #888888;
+            --gray-light: #cccccc;
+            --white: #ffffff;
+            --off-white: #f5f5f5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--dark);
+            color: var(--off-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(192, 57, 43, 0.3);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .nav-logo img {
+            height: 40px;
+            width: 40px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .nav-logo span {
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-logo .red {
+            color: var(--red);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--red);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(17,17,17,0.6) 0%, rgba(17,17,17,0.9) 70%, var(--dark) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            padding: 0 24px;
+        }
+
+        .hero-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 24px;
+            margin: 0 auto 32px;
+            object-fit: cover;
+            box-shadow: 0 0 60px rgba(192, 57, 43, 0.3);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+
+        .hero h1 .red {
+            color: var(--red);
+        }
+
+        .hero .tagline {
+            font-size: 1.25rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: var(--red);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--red-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(192, 57, 43, 0.4);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--gray-dark);
+            color: var(--gray-light);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--red);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 100px 24px;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-header h2 .red {
+            color: var(--red);
+        }
+
+        .section-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: var(--red);
+            border-radius: 2px;
+            margin: 16px auto 0;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--black);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(192, 57, 43, 0.2);
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+        }
+
+        .about-text h2 .red {
+            color: var(--red);
+        }
+
+        .about-text p {
+            color: var(--gray-light);
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+        }
+
+        /* Features / What We Do */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: var(--black);
+            border: 1px solid var(--gray-dark);
+            border-radius: 16px;
+            padding: 40px 32px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--red);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card:hover {
+            border-color: var(--red);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(192, 57, 43, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Stats */
+        .stats {
+            background: linear-gradient(135deg, var(--red-dark), var(--red));
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.85;
+        }
+
+        /* Games Section */
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+        }
+
+        .game-card {
+            background: var(--black);
+            border: 1px solid var(--gray-dark);
+            border-radius: 16px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .game-card:hover {
+            border-color: var(--red);
+            transform: translateY(-4px);
+        }
+
+        .game-badge {
+            display: inline-block;
+            background: rgba(192, 57, 43, 0.15);
+            color: var(--red);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+
+        .game-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .game-card p {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* Contact / CTA */
+        .cta-section {
+            background: var(--black);
+            text-align: center;
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, rgba(192, 57, 43, 0.1), rgba(192, 57, 43, 0.05));
+            border: 1px solid rgba(192, 57, 43, 0.3);
+            border-radius: 24px;
+            padding: 64px 40px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-box h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .cta-box p {
+            color: var(--gray);
+            margin-bottom: 32px;
+            font-size: 1.05rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            border-top: 1px solid var(--gray-dark);
+            padding: 40px 24px;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-brand img {
+            height: 32px;
+            width: 32px;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+        .footer-brand span {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--red);
+        }
+
+        .footer-copy {
+            color: var(--gray);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .games-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-logo {
+                width: 140px;
+                height: 140px;
+            }
+
+            section {
+                padding: 60px 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 24px;
+            }
+
+            .stat-item h3 {
+                font-size: 2rem;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.jpg" alt="Gaming Crows">
+                <span><span class="red">GAMING</span> CROWS</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="images/banner.jpg" alt="Gaming Crows Banner">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="images/logo.jpg" alt="Gaming Crows Logo" class="hero-logo">
+            <h1><span class="red">GAMING</span> CROWS</h1>
+            <p class="tagline">Crafting bold, unforgettable gaming experiences</p>
+            <div class="hero-cta">
+                <a href="#games" class="btn btn-primary">Explore Our Games</a>
+                <a href="#about" class="btn btn-outline">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="about" id="about">
+        <div class="section-inner">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="images/banner.jpg" alt="Gaming Crows Studio">
+                </div>
+                <div class="about-text">
+                    <h2>Who We <span class="red">Are</span></h2>
+                    <p>Gaming Crows is an indie game studio driven by a passion for creating games that are fun, challenging, and impossible to put down. We believe great games come from bold ideas and relentless polish.</p>
+                    <p>From brain-teasing puzzles to action-packed adventures, we build experiences that keep players coming back for more. Every game we ship is crafted with care, tested obsessively, and designed to deliver maximum enjoyment.</p>
+                    <p>We're a small team with big ambitions, and we're just getting started.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What We Do -->
+    <section id="features">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2>What We <span class="red">Do</span></h2>
+                <p>We focus on what matters most: making games people love to play</p>
+                <div class="accent-line"></div>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">&#127918;</span>
+                    <h3>Mobile Games</h3>
+                    <p>We build engaging mobile games optimized for pick-up-and-play sessions. Smooth performance, intuitive controls, and addictive gameplay loops.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">&#129513;</span>
+                    <h3>Puzzle & Strategy</h3>
+                    <p>Our puzzle games challenge your mind with clever mechanics that are easy to learn but incredibly satisfying to master.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">&#9889;</span>
+                    <h3>Constant Updates</h3>
+                    <p>We actively listen to our players and ship regular updates with new content, levels, and features to keep the experience fresh.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="section-inner">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10K+</h3>
+                    <p>Downloads</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.5</h3>
+                    <p>Avg Rating</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100+</h3>
+                    <p>Levels Built</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Player Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Games -->
+    <section id="games">
+        <div class="section-inner">
+            <div class="section-header">
+                <h2>Our <span class="red">Games</span></h2>
+                <p>Check out the titles we've been working on</p>
+                <div class="accent-line"></div>
+            </div>
+            <div class="games-grid">
+                <div class="game-card">
+                    <span class="game-badge">Available Now</span>
+                    <h3>GridLock</h3>
+                    <p>A challenging puzzle game that tests your spatial reasoning and strategic thinking. Navigate intricate grid-based levels, unlock achievements, and sync your progress across devices. Available on Android and iOS.</p>
+                </div>
+                <div class="game-card">
+                    <span class="game-badge">Coming Soon</span>
+                    <h3>More Titles Incoming</h3>
+                    <p>We're hard at work on our next release. Follow us on social media to stay in the loop and be the first to know when new games drop.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section class="cta-section" id="contact">
+        <div class="section-inner">
+            <div class="cta-box">
+                <h2>Get In <span class="red">Touch</span></h2>
+                <p>Have feedback, a question, or just want to say hello? We'd love to hear from you.</p>
+                <a href="mailto:sunderis1000@gmail.com" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <img src="images/logo.jpg" alt="Gaming Crows">
+                <span><span style="color: var(--red);">GAMING</span> CROWS</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="mailto:sunderis1000@gmail.com">Contact</a></li>
+            </ul>
+            <p class="footer-copy">&copy; 2026 Gaming Crows. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
