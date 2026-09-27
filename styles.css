@@ -1361,3 +1361,50 @@ footer {
         font-size: 1.8rem;
     }
 }
+/* ---------- Last Signal page (reuses .gl-* with a cyan accent) ---------- */
+.ls-page .gl-teal,
+.ls-page .gl-nav-active,
+.ls-page .gl-hero-tagline,
+.ls-page .gl-btn-outline {
+    color: #3fd8ff !important;
+}
+
+.ls-page .gl-btn-outline {
+    border-color: rgba(63, 216, 255, 0.35);
+}
+
+.ls-page .gl-btn-outline:hover {
+    border-color: #3fd8ff;
+    color: var(--white) !important;
+}
+
+.ls-page .gl-accent-line,
+.ls-page .gl-feature-card::before {
+    background: linear-gradient(90deg, #3fd8ff, #f5b83d);
+}
+
+.ls-page .gl-cta-box {
+    background: linear-gradient(135deg, rgba(63, 216, 255, 0.06), rgba(245, 184, 61, 0.04));
+    border-color: rgba(63, 216, 255, 0.18);
+}
+
+/* Landscape screenshots */
+.ls-page .gl-phone-frame {
+    width: 480px;
+    max-width: 82vw;
+    border-radius: 16px;
+}
+
+.ls-coming-soon {
+    display: inline-block;
+    background: rgba(245, 184, 61, 0.15);
+    border: 1px solid rgba(245, 184, 61, 0.4);
+    color: #f5b83d;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
